@@ -1,0 +1,282 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://star.png" type="Texture" id=1]
+[ext_resource path="res://player.gd" type="Script" id=2]
+[ext_resource path="res://main.gd" type="Script" id=3]
+[ext_resource path="res://paper-with-newspaper-bits-1184735.jpg" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 45.1677
+
+[sub_resource type="Animation" id=2]
+resource_name = "boppin"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Skeleton2D/top:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 3.18561 ), Vector2( 0.118042, 4.60144 ), Vector2( 0.236023, 2.83167 ), Vector2( 0.236023, 5.07336 ), Vector2( 0.118042, 2.12378 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Skeleton2D/mid_right:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Skeleton2D/mid_right:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -15.0, -20.7534, -20.7534 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Skeleton2D/mid_right:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.5, 1 ), Vector2( 1.5, 1 ), Vector2( 1.6, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "idle"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Skeleton2D/mid_right:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1.05943, 2.29733 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Skeleton2D/mid_left:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0.264862, 2.50433 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Skeleton2D/top:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0.264832, 4.2973 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Skeleton2D/bottom_left:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 120.0, 114.337 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../Skeleton2D/bottom_right:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 60.0, 64.9251 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Skeleton2D/mid_right:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -34.6631, -3.70695, -37.8329, -6.77033 ]
+}
+
+[sub_resource type="RectangleShape2D" id=5]
+
+[node name="main" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="World" type="Node2D" parent="."]
+position = Vector2( 1224.64, -257.024 )
+rotation = 1.5708
+
+[node name="TextureRect" type="TextureRect" parent="World"]
+margin_left = -705.141
+margin_top = -199.665
+margin_right = 1257.86
+margin_bottom = 1788.33
+texture = ExtResource( 4 )
+flip_h = true
+flip_v = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="paperplatform1" type="StaticBody2D" parent="World"]
+position = Vector2( 637.046, 1137.17 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/paperplatform1"]
+position = Vector2( 83.7261, 71.7637 )
+polygon = PoolVector2Array( 3.12402, -174.437, -85.3091, -60.3083, -93.9856, -65.9814, -85.9766, -83.0006, -85.3091, -156.083, -46.5988, -204.471 )
+
+[node name="paperplatform2" type="StaticBody2D" parent="World"]
+position = Vector2( 695.975, 946.917 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/paperplatform2"]
+position = Vector2( 83.7261, 71.7637 )
+polygon = PoolVector2Array( 21.9996, -77.053, -27.9499, -56.0068, -82.6699, -85.4715, -110.731, -94.7317, -128.971, -142.717, -48.7155, -138.227, 12.1781, -112.13 )
+
+[node name="paperplatform3" type="StaticBody2D" parent="World"]
+position = Vector2( 858.287, 806.829 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/paperplatform3"]
+polygon = PoolVector2Array( -18.106, -5.6279, -28.8209, -6.81845, -39.5359, -84.2042, -39.9327, -136.985, -21.2808, -142.938 )
+
+[node name="paperplatform4" type="StaticBody2D" parent="World"]
+position = Vector2( 802.728, 663.566 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/paperplatform4"]
+polygon = PoolVector2Array( 5.5556, 18.319, -18.8231, 35.5624, -2.4715, -9.33014, 20.1234, -25.3844, 28.1506, -20.3303, 13.5828, 3.15656 )
+
+[node name="paperplatform5" type="StaticBody2D" parent="World"]
+position = Vector2( 811.944, 431.076 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/paperplatform5"]
+polygon = PoolVector2Array( 17.8657, 19.7823, 22.7657, 29.1368, 69.9833, 25.1277, 73.9924, 4.19165, -8.86121, -22.0898, -6.18848, 5.97339 )
+
+[node name="paperplatform6" type="StaticBody2D" parent="World"]
+position = Vector2( 401.24, 464.04 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/paperplatform6"]
+polygon = PoolVector2Array( 24.2838, 40.3536, 86.7838, 41.6036, 40.7838, -53.6464, -35.7162, -18.8964, -4.46625, 19.1036, 18.7838, 24.6036 )
+
+[node name="player" type="KinematicBody2D" parent="."]
+position = Vector2( 440.683, 314.517 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+shape = SubResource( 1 )
+
+[node name="Skeleton2D" type="Skeleton2D" parent="player"]
+visible = false
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="bottom_right" type="Bone2D" parent="player/Skeleton2D"]
+rotation = 1.0472
+scale = Vector2( 1.5, 1 )
+rest = Transform2D( 0.75, 1.29904, -0.866025, 0.5, 0, 0 )
+__meta__ = {
+"_edit_ik_": true
+}
+
+[node name="bottom_left" type="Bone2D" parent="player/Skeleton2D"]
+rotation = 2.09439
+scale = Vector2( 1.5, 1 )
+rest = Transform2D( -0.75, 1.29904, -0.866025, -0.5, 0, 0 )
+__meta__ = {
+"_edit_ik_": true
+}
+
+[node name="mid_left" type="Bone2D" parent="player/Skeleton2D"]
+rotation = -2.8716
+scale = Vector2( 1.4547, 1.00012 )
+rest = Transform2D( -1.402, -0.388, 0.259, -0.966, 0, 0 )
+__meta__ = {
+"_edit_ik_": true
+}
+
+[node name="mid_right" type="Bone2D" parent="player/Skeleton2D"]
+rotation = -0.261799
+scale = Vector2( 1.5, 1 )
+rest = Transform2D( 1.44889, -0.388228, 0.258819, 0.965926, 0, 0 )
+__meta__ = {
+"_edit_ik_": true
+}
+
+[node name="top" type="Bone2D" parent="player/Skeleton2D"]
+rotation = -1.5708
+scale = Vector2( 1.5, 1 )
+rest = Transform2D( 1.78873e-08, -1.5, 1, 1.19249e-08, 0, 0 )
+__meta__ = {
+"_edit_bone_": true,
+"_edit_ik_": true
+}
+
+[node name="star" type="Polygon2D" parent="player"]
+scale = Vector2( 0.2, 0.2 )
+offset = Vector2( -255.168, -263.669 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 235.072, -5.403, 153.072, 124.597, 12.2537, 163.087, -4.81949, 214.307, 91.1155, 325.689, 78.9203, 483.412, 121.197, 515.12, 257.782, 451.705, 388.676, 514.306, 430.14, 486.664, 423.072, 324.597, 510.561, 215.597, 500.991, 168.228, 358.886, 122.774, 278.025, -4.97751, 165.912, 128.941, 178.107, 137.071, 351.278, 125.689, 339.896, 137.884, 237.457, 3.7374, 246.4, 19.1846, 274.042, 2.11139, 268.351, 19.1846, 35.8309, 186.664, 23.6358, 207.802, 117.132, 311.867, 107.376, 468.778, 122.01, 485.038, 257.782, 418.372, 380.546, 482.599, 403.311, 470.404, 395.181, 316.746, 483.798, 206.989, 476.481, 186.664, 134.205, 190.729, 134.205, 248.453, 375.668, 250.079, 374.042, 190.729 )
+uv = PoolVector2Array( 235.072, -5.403, 153.072, 124.597, 12.2537, 163.087, -4.81949, 214.307, 91.1155, 325.689, 78.9203, 483.412, 121.197, 515.12, 257.782, 451.705, 388.676, 514.306, 430.14, 486.664, 423.072, 324.597, 510.561, 215.597, 500.991, 168.228, 358.886, 122.774, 278.025, -4.97751, 165.912, 128.941, 178.107, 137.071, 351.278, 125.689, 339.896, 137.884, 237.457, 3.7374, 246.4, 19.1846, 274.042, 2.11139, 268.351, 19.1846, 35.8309, 186.664, 23.6358, 207.802, 117.132, 311.867, 107.376, 468.778, 122.01, 485.038, 257.782, 418.372, 380.546, 482.599, 403.311, 470.404, 395.181, 316.746, 483.798, 206.989, 476.481, 186.664, 167.538, 190.729, 165.099, 246.827, 351.278, 251.705, 345.587, 187.477 )
+polygons = [ PoolIntArray( 0, 19, 20, 22, 21, 14 ), PoolIntArray( 0, 1, 15, 16, 20, 19 ), PoolIntArray( 14, 21, 22, 18, 17, 13 ), PoolIntArray( 16, 18, 22, 20 ), PoolIntArray( 16, 15, 1, 2, 23 ), PoolIntArray( 2, 3, 24, 23 ), PoolIntArray( 3, 4, 25, 24 ), PoolIntArray( 4, 5, 6, 27, 26, 25 ), PoolIntArray( 6, 7, 28, 27 ), PoolIntArray( 7, 8, 29, 28 ), PoolIntArray( 29, 8, 9, 30 ), PoolIntArray( 9, 10, 31, 30 ), PoolIntArray( 10, 11, 32, 31 ), PoolIntArray( 11, 12, 33, 32 ), PoolIntArray( 12, 13, 17, 18, 33 ), PoolIntArray( 25, 26, 27, 28 ), PoolIntArray( 28, 29, 30, 31 ), PoolIntArray( 16, 34, 35, 25, 24, 23 ), PoolIntArray( 18, 37, 36, 31, 32, 33 ), PoolIntArray( 35, 36, 31, 28, 25 ), PoolIntArray( 34, 37, 18, 16 ), PoolIntArray( 34, 35, 36, 37 ) ]
+bones = [ NodePath("bottom_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0 ), NodePath("bottom_left"), PoolRealArray( 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("mid_left"), PoolRealArray( 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("mid_right"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0 ), NodePath("top"), PoolRealArray( 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+internal_vertex_count = 23
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player/star"]
+anims/boppin = SubResource( 2 )
+anims/idle = SubResource( 3 )
+anims/wave = SubResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( -637.746, 599.956 )
+scale = Vector2( 200, 1.552 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 10.0477, 9.13956 )
+shape = SubResource( 5 )
+
+[node name="PlayerTest" type="RigidBody2D" parent="."]
